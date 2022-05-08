@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <title>Tcabezon-#A3</title>
+    <title>Tcabezon-#FP</title>
     <link rel="shortcut icon" href="firma.png" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100;150;200;250;300;350;400;500;600;900&family=Roboto:wght@100;400;500;900&display=swap');
@@ -69,6 +69,15 @@
 
             border: none;
         }
+
+        #img_ {
+            /* border:1px solid #555; */
+            box-shadow: 0 6px 20px 0 rgb(0 0 0 / 19%);
+        }
+
+        .iDiv {
+            margin: 5%;
+        }
     </style>
 </head>
 
@@ -111,38 +120,61 @@
                 <br>
 
                 <p>
-                    INTRO PROJECT_____mention interfaceGAN <a href="https://arxiv.org/pdf/1907.10786.pdf"
-                        target="'_blank">'Interpreting the Latent Space of GANs for Semantic Face Editing'</a>
-                    In this project, we will explore coding and training of GANs (Generative Adversarial Networks). This
-                    assignment is divided into two
-                    parts: in the first part, we will implement a specific type of GAN designed to process images,
-                    called a Deep Convolutional GAN (DCGAN). We’ll train the DCGAN to generate cats from samples of
-                    random noise. In the second part, we will implement a more complex GAN architecture called CycleGAN,
-                    which was designed for the task of image-to-image translation.
-                    We’ll train the CycleGAN to convert between different types of two kinds of cats (Grumpy and Russian
-                    Blue) and apples to oranges.
-                    <br>
-                    <br>
-
+                    In this project, we will explore the possibilities of interpreting the latent semantics learned by
+                    GANs for garment editing. This work is
+                    inspired by the paper <a href="https://arxiv.org/pdf/1907.10786.pdf" target="'_blank">'Interpreting
+                        the Latent Space of GANs for Semantic Face Editing'</a> and its final objective is to find other
+                    domains in which to apply this study.
+                    The project is divided into two
+                    parts: the first part, consists on the trainning of a StyleGAN on the Viton dataset for its
+                    posterior analysis. In the second part, we will conduct a study of the diferent features encoded in
+                    the learned latent space to control of different garment features, such as, sleeve length or
+                    texture.
                 </p>
-
-                <h2>Interpreting Latent space</h2>
+                <br><br><br>
+                <h2>InterFaceGAN</h2>
+                <br><br>
+                <h4>Interpreting latent space</h4>
                 <br>
                 <p>
-                    EXPLAIN INTERFACEGAN____or the first part of this assignment, we will implement a Deep Convolutional
-                    GAN (DCGAN) as introduced
-                    by . A DCGAN is
-                    simply a GAN that uses a convolutional neural network as the discriminator, and a network composed
-                    of
-                    transposed convolutions as the generator. To implement the DCGAN, we need to specify three things:
-                    1)
-                    the generator, 2) the discriminator, and 3) the training procedure. We will develop each of these
-                    three
-                    components in the following subsections.
+                    In the <a href="https://arxiv.org/pdf/1907.10786.pdf" target="'_blank">InterFaceGAN</a> paper, the
+                    authors show how they found that:
+
+                <div class="iDiv">
+                    <i>
+                        "the latent code of <b>well-trained generative
+                            models actually learns a disentangled representation after linear transformations.</b> We
+                        explore
+                        the disentanglement between various semantics and manage to decouple some entangled semantics
+                        with subspace projection, leading to more precise control of facial attributes."
+                    </i>
+                </div>
+
+
+                This project is based on the exploration of the possibilities of this latent space exploration in
+                other domains, as it could be fashion, and garment tweaking. To do so, we have followed the claim of
+                the previous paper:
+
+                <div class="iDiv">
+                    <i>
+                        "It has been widely observed that when linearly interpolating two latent codes z1 and z2, the
+                        appearance of the corresponding synthesis changes continuously.<br><br>
+                        According to Property 1, the linear interpolation between z1 and z2 forms a direction in Z,
+                        which
+                        further defines a hyperplane. We therefore make an assumption that for any binary semantic,
+                        <b>there exists a hyperplane in the latent space serving as the separation boundary.</b>
+                        Semantic remains the same when the latent code walks within the same side of the hyperplane yet
+                        turns into the opposite when across the boundary"
+                    </i>
+                </div>
+
+                To find this boundary, a vector-support machine (SVM) is used. Points belonging to the extremes of each
+                binary feature are used to find the hyperplane as it can be seen in the following image.
 
                 </p>
                 <br>
-                <img src="images/interClothGAN/svm.png" class='  d-block float-center mx-auto d-block img-fluid col-8'>
+                <img src="images/interClothGAN/svm.png" class='  d-block float-center mx-auto d-block img-fluid col-6'>
+                <figcaption>Diagram of an SVM.</figcaption>
                 <br>
                 <br>
 
@@ -150,22 +182,31 @@
 
                 <br>
                 <p>
+                    In this firt part, a StyleGAN is trained to later perform the latent space study. <a
+                        href="https://github.com/NVlabs/stylegan" target="'_blank">Nvidia's StyleGan</a> is used to
+                    train this GAN on the <a href="https://www.kaggle.com/datasets/rkuo2000/viton-dataset"
+                        target="'_blank">Viton dataset</a>, composed of is used
+                    14.221 images of different top garments.
 
-                    VITON 10k_____The discriminator in this DCGAN is a convolutional neural network that has the following
-                    architecture:
                 </p>
                 <br>
                 <img src="images/interClothGAN/train_gif.gif"
                     class='  d-block float-center mx-auto d-block img-fluid col-12'>
-                    <br><figcaption>Training process of the styleGAN.</figcaption>
-                    
+                <figcaption>Training process of the styleGAN.</figcaption>
+                <br><br>
+                <p>
+                    In the following images the losses of the training of our model can be seen. We kept track of the
+                    FID50k score during training, receiving a final score of 26.11. The scores given by the
+                    discriminator to the real images, as well as, the scores of fake images get closer to the absolute
+                    value of 0.5, showing that during training the model improves.
+                </p>
                 <br>
                 <br>
                 <br>
                 <img src="images/interClothGAN/training_losses.png"
                     class='  d-block float-center mx-auto d-block img-fluid col-10'>
                 <br>
-                <figcaption>Metrics/fid50k</figcaption>
+                <figcaption>FID50K Scores of the StyleGAN training.</figcaption>
 
                 <br>
                 <br>
@@ -175,59 +216,74 @@
                     <div class="col-5 align-self-center  m-0 p-0 ">
                         <img src="images/interClothGAN/real_losses.png"
                             class='  d-block float-center mx-auto d-block img-fluid m-0 p-0  col-12'>
-                        <figcaption><br>Loss/scores/real</figcaption>
+                        <figcaption><br>Loss/scores of real images.</figcaption>
 
                     </div>
                     <div class="col-5 align-self-center  m-0 p-0 ">
                         <img src="images/interClothGAN/fake_losses.png"
                             class='  d-block float-center mx-auto d-block img-fluid m-0 p-0  col-12'>
-                        <figcaption><br>Loss/scores/fake</figcaption>
+                        <figcaption><br>Loss/scores of fake images.</figcaption>
                     </div>
                 </div>
 
-                <br>
+                <br><br><br>
 
                 <h2>Boundaries</h2>
 
-                <br>
+                <br><br>
                 <p>
 
-                    EXPLAIN THE BOUNDARIES_____The discriminator in this DCGAN is a convolutional neural network that
-                    has the following architecture:
+                    Once we have a well trained GAN we procede to explore the disentaglement of the different
+                    features. We used the previously explained SVM to find the hyperplanes that separete the boundaries
+                    and get the normal vectors to this hyperplanes as the feature editing directions.
+                    To manipulate/tweak any attribute, we edit the
+                    original latent code <b><i>z</i></b> as:
+                    <br><br>
+                    <img class="d-block float-center mx-auto d-block img-fluid col-5 col-md-3 col-lg-2"
+                        id="equationview" name="equationview"
+                        src="https://latex.codecogs.com/svg.image?z_{edit}=z&plus;\alpha&space;n">
+                    <br>
+                    where <b><i>α</i></b> is the parameter that shifts <b><i>z</i></b> on the editing direction
+                    <b><i>n</i></b>, which the unit vector normal to the boundary hyperplane. In the following
+                    image is a diagram of how the sleeve length editing direction was found. Apart from this feature, we
+                    also found the direction to edit the texture of the garment as well as the redness of it.
                 </p>
                 <br>
                 <img src="images/interClothGAN/boundary.jpg"
                     class='  d-block float-center mx-auto d-block img-fluid col-11'>
-                <figcaption class="col-7 d-block float-center mx-auto d-block "><br>Examples used to find the <i>sleeve length</i> boundary in the latent space.</figcaption>
+                <figcaption class="col-7 d-block float-center mx-auto d-block "><br>Examples used to find the <i>sleeve
+                        length</i> boundary in the latent space.</figcaption>
 
-                <br>
+                <br><br><br>
 
                 <h2>Results</h2>
 
-                <br>
+                <br><br>
                 <p>
 
-                    EXPLAIN THE BOUNDARIES_____The discriminator in this DCGAN is a convolutional neural network that
-                    has the following architecture:
+                    A garment generated by the StyleGAN generator can be tweaked using the
+                    found editing directions allowing the user to explore the design space.
                 </p>
                 <br>
                 <img src="images/interClothGAN/SLIDERS.jpg"
                     class='  d-block float-center mx-auto d-block img-fluid col-10'>
                 <figcaption class="col-10 d-block float-center mx-auto d-block "><br>On the left, original image without
                     editing. The columns to the right, corresponding results after applying the changes.</figcaption>
-                <br>
+                <br><br><br>
 
                 <h2>Demo</h2>
 
-                <br>
+                <br><br>
                 <p>
 
-                    Demo_____The discriminator in this DCGAN is a convolutional neural network that has the following
-                    architecture:
+                    Bellow, a demo of the possible interaction between the user and the proposed InterClothGAN is shown.
                 </p>
                 <br>
-                <img src="images/interClothGAN/demo_gifHQ.gif"
+                <img id='img_' src="images/interClothGAN/demo_gifHQ.gif"
                     class='  d-block float-center mx-auto d-block img-fluid col-12'>
+                <figcaption class="col-7 d-block float-center mx-auto d-block "><br>Demo of the InterClothesGAN.
+                </figcaption>
+
                 <br>
 
 
