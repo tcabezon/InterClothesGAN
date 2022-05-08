@@ -11,7 +11,7 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <title>Tcabezon-#A3</title>
-    <link rel="shortcut icon" href="data/firma.png" />
+    <link rel="shortcut icon" href="firma.png" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100;150;200;250;300;350;400;500;600;900&family=Roboto:wght@100;400;500;900&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700;900&family=Noto+Sans:ital@1&display=swap');
@@ -78,574 +78,179 @@
         <div class="container bg-white col-xl-6 col-lg-10 col-md-12">
 
             <!-- content -->
-        <div class='content'>
+            <div class='content'>
 
-            <br><br>
-            <br><br>
-            <br><br>
-            <h1 class="text-center"> InterClothesGAN<br>Final Project</h1>
+                <br><br>
+                <br><br>
+                <br><br>
+                <h1 class="text-center"> InterClothesGAN<br>Final Project</h1>
 
-            <br>
+                <br>
 
-            <h6 class="text-center">CMU 16-726 Image Synthesis S22 </h6>
-            <h6 class="text-center">Tomas Cabezon Pedroso</h6>
-
-
-            <br>
-
-            <br><br>
+                <h6 class="text-center">CMU 16-726 Image Synthesis S22 </h6>
+                <h6 class="text-center">Tomas Cabezon Pedroso</h6>
 
 
-            <div class="container m-0 p-0 col-12 align-self-center ">
-                <div class="row col-12 align-self-center bg-warning m-0 p-0 ">
+                <br>
 
-                    <img src="images/interClothGAN/introGIF_s_0.png"
-                        class='  d-block float-center mx-auto d-block img-fluid m-0 p-0  col-4'>
-                    <img src="images/interClothGAN/introGif.gif"
-                        class='  d-block float-center mx-auto d-block img-fluid  m-0 p-0  col-8'>
+                <br><br>
+
+
+
+                <div class="container row m-0 p-0 col-12 align-self-center ">
+                    <div class="col-lg-3 col-md-2 col-1 align-self-center bg-warning m-0 p-0 "></div>
+                    <div class="col-lg-3 col-md-4 col-5 align-self-center bg-warning m-0 p-0 ">
+                        <img src="images/interClothGAN/introGIF_s_0.png"
+                            class='  d-block float-center mx-auto d-block img-fluid m-0 p-0  col-12'>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-5 align-self-center bg-warning m-0 p-0 ">
+                        <img src="images/interClothGAN/intro_gif.gif"
+                            class='  d-block float-center mx-auto d-block img-fluid m-0 p-0  col-12'>
+                    </div>
+                </div>
+                <br>
+
+                <p>
+                    INTRO PROJECT_____mention interfaceGAN <a href="https://arxiv.org/pdf/1907.10786.pdf"
+                        target="'_blank">'Interpreting the Latent Space of GANs for Semantic Face Editing'</a>
+                    In this project, we will explore coding and training of GANs (Generative Adversarial Networks). This
+                    assignment is divided into two
+                    parts: in the first part, we will implement a specific type of GAN designed to process images,
+                    called a Deep Convolutional GAN (DCGAN). We’ll train the DCGAN to generate cats from samples of
+                    random noise. In the second part, we will implement a more complex GAN architecture called CycleGAN,
+                    which was designed for the task of image-to-image translation.
+                    We’ll train the CycleGAN to convert between different types of two kinds of cats (Grumpy and Russian
+                    Blue) and apples to oranges.
+                    <br>
+                    <br>
+
+                </p>
+
+                <h2>Interpreting Latent space</h2>
+                <br>
+                <p>
+                    EXPLAIN INTERFACEGAN____or the first part of this assignment, we will implement a Deep Convolutional
+                    GAN (DCGAN) as introduced
+                    by . A DCGAN is
+                    simply a GAN that uses a convolutional neural network as the discriminator, and a network composed
+                    of
+                    transposed convolutions as the generator. To implement the DCGAN, we need to specify three things:
+                    1)
+                    the generator, 2) the discriminator, and 3) the training procedure. We will develop each of these
+                    three
+                    components in the following subsections.
+
+                </p>
+                <br>
+                <img src="images/interClothGAN/svm.png" class='  d-block float-center mx-auto d-block img-fluid col-8'>
+                <br>
+                <br>
+
+                <h2>StyleGAN</h2>
+
+                <br>
+                <p>
+
+                    VITON 10k_____The discriminator in this DCGAN is a convolutional neural network that has the following
+                    architecture:
+                </p>
+                <br>
+                <img src="images/interClothGAN/train_gif.gif"
+                    class='  d-block float-center mx-auto d-block img-fluid col-12'>
+                    <br><figcaption>Training process of the styleGAN.</figcaption>
                     
-
-
-
-                </div>
-            </div>
-            <br>
-
-            <p>
-                In this project, INTRO PROJECTwe will explore coding and training of GANs (Generative Adversarial Networks). This
-                assignment is divided into two
-                parts: in the first part, we will implement a specific type of GAN designed to process images,
-                called a Deep Convolutional GAN (DCGAN). We’ll train the DCGAN to generate cats from samples of
-                random noise. In the second part, we will implement a more complex GAN architecture called CycleGAN,
-                which was designed for the task of image-to-image translation.
-                We’ll train the CycleGAN to convert between different types of two kinds of cats (Grumpy and Russian
-                Blue) and apples to oranges.
                 <br>
                 <br>
+                <br>
+                <img src="images/interClothGAN/training_losses.png"
+                    class='  d-block float-center mx-auto d-block img-fluid col-10'>
+                <br>
+                <figcaption>Metrics/fid50k</figcaption>
 
-            </p>
+                <br>
+                <br>
+                <br>
+                <div class="container row m-0 p-0 col-12 align-self-center ">
+                    <div class="col-1 align-self-center  m-0 p-0 "></div>
+                    <div class="col-5 align-self-center  m-0 p-0 ">
+                        <img src="images/interClothGAN/real_losses.png"
+                            class='  d-block float-center mx-auto d-block img-fluid m-0 p-0  col-12'>
+                        <figcaption><br>Loss/scores/real</figcaption>
 
-            <h2>Interpreting Latent space</h2>
-            <br>
-            <p>
-                or the first part of this assignment, we will implement a Deep Convolutional GAN (DCGAN) as introduced
-                by <a href="https://arxiv.org/pdf/1511.06434.pdf%C3" target="'_blanck">Radford et al</a>. A DCGAN is
-                simply a GAN that uses a convolutional neural network as the discriminator, and a network composed of
-                transposed convolutions as the generator. To implement the DCGAN, we need to specify three things: 1)
-                the generator, 2) the discriminator, and 3) the training procedure. We will develop each of these three
-                components in the following subsections.
-
-            </p>
-            <br>
-
-            <h4>Discriminator</h4>
-
-            <br>
-            <p>
-
-                The discriminator in this DCGAN is a convolutional neural network that has the following architecture:
-            </p>
-            <br>
-            <img src="images/cats//discriminator.png" class='  d-block float-center mx-auto d-block img-fluid col-10'>
-            <br>
-            <br>
-
-
-            <p>
-                In each of the convolutional layers shown above, we downsample the spatial dimension of the input
-                volume by a factor of 2. Given the input-output relation equation and that we use kernel size K = 4 and
-                stride S =
-                2, the padding for each convolution is:
-            </p>
-            <br>
-            <img src="images/cats/formula.png"
-                class='  d-block float-center mx-auto d-block img-fluid  col-lg-5 col-md-7 col-10'>
-            <br>
-            <img src="images/cats/d_padding.png"
-                class='  d-block float-center mx-auto d-block img-fluid col-lg-6 col-md-8  col-9'>
-
-            <br>
-            <br>
-
-            <p>
-                Bellow a summary of the discriminator implemented can be seen. The sizes of the outputs of
-                each layer can be seen as well as the number of parameters that were trained. After each
-                convolution operation, ReLU activation has been used a except from the last layer, the 5th
-                Conv2d layer.
-            </p>
-            <br>
-
-            <img src="images/cats/dis_arch.png" class=' d-block mx-auto d-block img-fluid col-lg-6 col-md-8 col-10'>
-            <br>
-            <p>
-
-            </p>
-            <br>
-            <br>
-            <h4>Generator</h4>
-
-            <br>
-
-            <br>
-            <img src="images/cats/generator.png" class='  d-block float-center mx-auto d-block img-fluid col-10'>
-            <br>
-
-
-            <br>
-
-
-            <p>
-                The generator of the DCGAN consists of a sequence
-                of transpose convolutional layers(we will implement upsampling and posterior conv2d) that progressively
-                upsample the input noise sample to generate a fake image.
-                <br><br>
-                Before each of the convolutional layers shown above, we upsample the spatial dimension of the input
-                volume by a factor of 2. Given the input-output relation equation and that we use kernel size K = 3 and
-                stride S =
-                1, the padding for each convolution is:
-            </p>
-            <br>
-
-            <img src="images/cats/g_padding.png"
-                class='  d-block float-center mx-auto d-block img-fluid col-lg-7 col-md-9  col-10'>
-
-
-            <br>
-
-            <p>
-                Bellow a summary of the generator implemented can be seen. The sizes of the outputs of
-                each layer can be seen as well as the number of parameters that were trained. After each
-                convolution operation, ReLU activation has been used a except from the last layer that used a Tanh
-                activation.
-            </p>
-            <br>
-
-            <img src="images/cats/dis_arch.png" class=' d-block mx-auto d-block img-fluid col-lg-6 col-md-8 col-10'>
-            <br>
-
-            <br>
-            <br>
-            <h4>Training the loop</h4>
-
-            <br>
-
-
-
-            <p>
-                Next, we implemented the training loop for the DCGAN. A DCGAN is simply a GAN with a specific type of
-                generator and discriminator; thus, we train it in exactly the same way as a standard GAN. The
-                pseudo-code for the training procedure is shown below.
-            </p>
-            <br>
-
-            <img src="images/cats/gan_algo.png" class='  d-block float-center mx-auto d-block img-fluid col-11'>
-
-            <br>
-            <br>
-            <h4>Results</h4>
-
-            <br>
-
-            <p>
-                To train the DCGAN we have used basic (normalization) and deluxe data augmentation techniques (random
-                crop and
-                horizontal flips).In the following plots, we
-                can see the influence of the data augmentation techniques. One of the main problems when training GANs
-                is overfitting, this occurs when the data used for trainning is so small that the model memorizes it,
-                which deteriorates the performance. Therefore, using data augmentation techniques increases the number
-                of training examples improving the the training.
-            </p>
-
-            <div class="container col-12 align-self-center p-0 m-0">
-                <div class="row  align-self-center p-0 m-0 ">
-                    <div class="col-6 p-0 m-0">
-
-                        <img src="images/cats/plot_basic.png"
-                            class=' d-block float-top mx-auto d-block img-fluid col-11'>
-                        <figcaption>Losses using basic data augmentation,<br>200 iterations</figcaption>
                     </div>
-                    <div class="col-6 p-0 m-0">
-
-                        <img src="images/cats/plot_deluxe.png"
-                            class=' d-block float-top mx-auto d-block img-fluid col-11'>
-                        <figcaption>Losses using deluxe data augmentation,<br>200 iterations</figcaption>
+                    <div class="col-5 align-self-center  m-0 p-0 ">
+                        <img src="images/interClothGAN/fake_losses.png"
+                            class='  d-block float-center mx-auto d-block img-fluid m-0 p-0  col-12'>
+                        <figcaption><br>Loss/scores/fake</figcaption>
                     </div>
                 </div>
-            </div>
-            <br>
-            <p>
-                To further improve the data efficiency of GANs, we have also applied differentiable augmentations
-                discussed in this <a href="https://arxiv.org/pdf/2006.10738.pdf" target="'_blanck">paper</a>. In the
-                plots bellow we can see the influence of this tecnique. The discriminator loss is higher this time, as
-                it is more difficult to differentiate real images from the fake ones, which also makes the
-                generator loss to reduce.
-            </p>
 
-            <div class="container col-12 align-self-center p-0 m-0">
-                <div class="row  align-self-center p-0 m-0 ">
-                    <div class="col-6 p-0 m-0">
+                <br>
 
-                        <img src="images/cats/plot_basic_diff_aug.png"
-                            class=' d-block float-top mx-auto d-block img-fluid col-11'>
-                        <figcaption>Losses using basic data augmentation,<br>200 iterations</figcaption>
-                    </div>
-                    <div class="col-6 p-0 m-0">
+                <h2>Boundaries</h2>
 
-                        <img src="images/cats/plot_deluxe_diff_aug.png"
-                            class=' d-block float-top mx-auto d-block img-fluid col-11'>
-                        <figcaption>Losses using deluxe data augmentation,<br>200 iterations </figcaption>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <p>
-                The outputs of training the models for 200 iterations and 6500 iterations are the following:
-                <br> <br> - For basic data augmentation:
-            <div class="container col-12 align-self-center p-0 m-0">
-                <div class="row  align-self-center p-0 m-0 ">
-                    <div class="col-6 p-0 m-0">
+                <br>
+                <p>
 
-                        <img src="images/cats/sample-000200_basic.png"
-                            class=' d-block float-top mx-auto d-block img-fluid col-11'>
-                        <figcaption>Basic data augmentation, 200 iterations</figcaption>
-                    </div>
-                    <div class="col-6 p-0 m-0">
+                    EXPLAIN THE BOUNDARIES_____The discriminator in this DCGAN is a convolutional neural network that
+                    has the following architecture:
+                </p>
+                <br>
+                <img src="images/interClothGAN/boundary.jpg"
+                    class='  d-block float-center mx-auto d-block img-fluid col-11'>
+                <figcaption class="col-7 d-block float-center mx-auto d-block "><br>Examples used to find the <i>sleeve length</i> boundary in the latent space.</figcaption>
 
-                        <img src="images/cats/sample-006300_basic.png"
-                            class=' d-block float-top mx-auto d-block img-fluid col-11'>
-                        <figcaption>Basic data augmentation, 6500 iterations</figcaption>
-                    </div>
-                </div>
-            </div>
-            <br> - For deluxe data augmentation:
-            <br><br>
-            <div class="container col-12 align-self-center p-0 m-0">
-                <div class="row  align-self-center p-0 m-0 ">
-                    <div class="col-6 p-0 m-0">
+                <br>
 
-                        <img src="images/cats/sample-000200_deelux.png"
-                            class=' d-block float-top mx-auto d-block img-fluid col-11'>
-                        <figcaption>Deluxe data augmentation, 200 iterations</figcaption>
-                    </div>
-                    <div class="col-6 p-0 m-0">
+                <h2>Results</h2>
 
-                        <img src="images/cats/sample-006500_delux.png"
-                            class=' d-block float-top mx-auto d-block img-fluid col-11'>
-                        <figcaption>Deluxe data augmentation, 6300 iterations</figcaption>
-                    </div>
-                </div>
-            </div>
-            <br>
-            In the previous images we can see the influence of this data augmentation technique in the quality of the
-            output images, even when the number of iterations for training is the same.
-            <br> <br> - For deluxe data augmentation with differentiable augmentation:
-            <br><br>
-            <div class="container col-12 align-self-center p-0 m-0">
-                <div class="row  align-self-center p-0 m-0 ">
-                    <div class="col-6 p-0 m-0">
+                <br>
+                <p>
 
-                        <img src="images/cats/sample-000200_delux_diff.png"
-                            class=' d-block float-top mx-auto d-block img-fluid col-11'>
-                        <figcaption>Deluxe data augmentation, 200 iterations</figcaption>
-                    </div>
-                    <div class="col-6 p-0 m-0">
+                    EXPLAIN THE BOUNDARIES_____The discriminator in this DCGAN is a convolutional neural network that
+                    has the following architecture:
+                </p>
+                <br>
+                <img src="images/interClothGAN/SLIDERS.jpg"
+                    class='  d-block float-center mx-auto d-block img-fluid col-10'>
+                <figcaption class="col-10 d-block float-center mx-auto d-block "><br>On the left, original image without
+                    editing. The columns to the right, corresponding results after applying the changes.</figcaption>
+                <br>
 
-                        <img src="images/cats/sample-006500_delux_diff.png"
-                            class=' d-block float-top mx-auto d-block img-fluid col-11'>
-                        <figcaption>Deluxe data augmentation, 6500 iterations</figcaption>
-                    </div>
-                </div>
-            </div>
-            <br>
-            Here we can see how the model crashed when used differentiable augmentation and thee model doesn't improve:
-            <img src="images/cats/plot_deluxe_diff_aug_6500.png"
-                class=' d-block float-top mx-auto d-block img-fluid col-9'>
-            <figcaption>Losses using delux and differentiable data augmentations, <br>6500 iterations</figcaption>
+                <h2>Demo</h2>
 
+                <br>
+                <p>
 
-            </p>
-
-            <h2>CycleGAN</h2>
-            <br><br>
-
-            <p>
-                In the second part of this assigment, we are going to implement a CycleGAN as introduced
-                by <a href="https://arxiv.org/pdf/1703.10593.pdf" target="'_blanck">Zhu et al</a>. CycleGANs are
-                particularly interesting because they allow to use un-paired training data. This means that in order
-                to train a model to translate images from domain X to domain Y , we do not have to have exact
-                correspondences
-                between individual images in those domains as it is the case for image-to-image translation.
-            </p>
-
-            <br>
-            <br>
-            <h4>Generator</h4>
-
-            <br>
-            <br>
-            <img src="images/cats/cyclegan_generator.png"
-                class='  d-block float-center mx-auto d-block img-fluid col-10'>
-            <br>
-            <p>
-
-                The generator in the CycleGAN has layers that implement three stages of computation:
-                <br><br>
-                1) the first stage
-                encodes the input via a series of convolutional layers that extract the image features;
-                <br>2) the second stage then transforms the features by passing them through one or more residual
-                blocks;
-                <br>3) the third
-                stage decodes the transformed features using a series of transposed convolutional layers, to build an
-                output image of the same size as the input.
-                <br><br>The residual block used in the transformation stage consists
-                of a convolutional layer, where the input is added to the output of the convolution. This is done so
-                that the characteristics of the output image (e.g., the shapes of objects) do not differ too much from
-                the input.
-                <br><br>
-                Bellow a summary of the generator implemented can be seen. The sizes of the outputs of
-                each layer can be seen as well as the number of parameters that were trained. After each convolution
-                operation, ReLU activation has been used a except from the last layer that used a Tanh activation.
-
-            </p>
-            <br>
-            <img src="images/cats/g_cyclegan.png" class='  d-block float-center mx-auto d-block img-fluid col-lg-6 col-md-8 col-10'>
-            <br>
-            <br>
-            <h4>PatchDiscriminator</h4>
-            <br>
-
-            <p>
-                CycleGAN adopts a patch-based discriminator. Instead of directly classifying an image to be real or
-                fake, it classifies the patches of the images, allowing CycleGAN to model local structures better. To
-                achieve this effect, we reduce the spatial outputs to a dimension of 4x4 instead of a
-                scalar, 1x1, as before.
-                <br><br>
-                Bellow a summary of the discriminator implemented can be seen. The sizes of the outputs of
-                each layer can be seen as well as the number of parameters that were trained. After each
-                convolution operation, ReLU activation has been used a except from the last layer.
-
-            </p>
-            
-
-            <img src="images/cats/d_cyclegan.png"
-                class='  d-block float-center mx-auto d-block img-fluid col-lg-6 col-md-8 col-10'>
+                    Demo_____The discriminator in this DCGAN is a convolutional neural network that has the following
+                    architecture:
+                </p>
+                <br>
+                <img src="images/interClothGAN/demo_gifHQ.gif"
+                    class='  d-block float-center mx-auto d-block img-fluid col-12'>
+                <br>
 
 
 
 
 
 
-            <br>
-            <br>
-            <h4>Training the loop</h4>
-
-            <br>
 
 
 
-            <p>
-                To train the CycleGan we implement the following training procedure:
-            </p>
-            <br>
-
-            <img src="images/cats/cyclegan_train.png" class='  d-block float-center mx-auto d-block img-fluid col-11'>
-
-            <br><br>
-            <h4>Cycle Consistency</h4>
-            <br>
-            <p>
-                The most interesting idea behind CycleGANs (and the one from which they get their name) is the idea of
-                introducing a cycle consistency loss to constrain the model. The idea is that when we translate an image
-                from domain X to domain Y, and then translate the generated image back to domain X, the result should
-                look like the original image that we started with. The cycle consistency component of the loss is the
-                mean squared error between the input images and their reconstructions obtained by passing through both
-                generators in sequence (i.e., from domain X to Y via the X->Y generator, and then from domain Y back to
-                X
-                via the Y->X generator). The cycle consistency loss for the Y->X->Y cycle is expressed as follows:
-            </p>
-
-
-            <img src="images/cats/formula2.png" class='  d-block float-center mx-auto d-block img-fluid col-sm-5 col-8'>
-
-            <br><br>
-            <h4>Results</h4>
-            <br>
-            <p>
-                In the following image we can see the influence of the cycle consistency loss in the output results. In
-                the first two images the results of training from domain X to Y and viceversa with and withouth cycle
-                consistency are shown:
-                <br><br>
-                X -> Y: from Russian Blue to Grumpy
-                <br><br>
-                <img src="images/cats/sample-001000-X-Y_patch_naive.png"
-                    class='  d-block float-center mx-auto d-block img-fluid col-sm-10 col-11'>
-            <figcaption>Without cycle consistency,1000 iterations and PatchDiscriminator</figcaption>
-            <img src="images/cats/sample-001000-X-Y_cycle.png"
-                class='  d-block float-center mx-auto d-block img-fluid col-sm-10 col-11'>
-            <figcaption>With cycle consistency,1000 iterations and PatchDiscriminator</figcaption>
-            <br>
-            Y -> X: from Grumpy to Russian Blue
-            <br><br>
-            <img src="images/cats/sample-001000-Y-X_patch_naive.png"
-                class='  d-block float-center mx-auto d-block img-fluid col-sm-10 col-11'>
-            <figcaption>Without cycle consistency,1000 iterations and PatchDiscriminator</figcaption>
-            <img src="images/cats/sample-001000-Y-X_cycle.png"
-                class='  d-block float-center mx-auto d-block img-fluid col-sm-10 col-11'>
-            <figcaption>With cycle consistency,1000 iterations and PatchDiscriminator</figcaption>
-            <br><br>
-
-            In the previous image we can seee that introducing the cycle consistency loss improves the results, and
-            reduces the visual artifacts. Therefore, the second training, with cycle consistency loss, has been
-            continued until 10000 iterations. The results can be seen bellow:
-            <br><br><br>
-
-            <img src="images/cats/sample-010000-X-Y_patch.png"
-                class='  d-block float-center mx-auto d-block img-fluid col-sm-10 col-11'>
-            <figcaption>With cycle consistency X -> Y,10000 iterations and PatchDiscriminator</figcaption>
-            <br>
-            <img src="images/cats/sample-010000-Y-X_patch.png"
-                class='  d-block float-center mx-auto d-block img-fluid col-sm-10 col-11'>
-            <figcaption>With cycle consistency Y -> X,10000 iterations and PatchDiscriminator</figcaption>
-
-            <br><br>
-            In the following experiments, we can compare the previous results, using PatchDiscriminator, with the
-            results using the previous DCDiscriminator. We can see that the PatchDiscriminator, another of thee
-            differences between DCGAN and CycleGAN improves the results for domain transformation.
-            <br><br>
-
-            <img src="images/cats/sample-010000-X-Y_dc.png"
-                class='  d-block float-center mx-auto d-block img-fluid col-sm-10 col-11'>
-            <figcaption>With cycle consistency X -> Y,10000 iterations and DCDiscriminator</figcaption>
-            <br>
-            <img src="images/cats/sample-010000-X-Y_dc.png"
-                class='  d-block float-center mx-auto d-block img-fluid col-sm-10 col-11'>
-            <figcaption>With cycle consistency Y -> X,10000 iterations and DCDiscriminator</figcaption>
-
-            <br><br>
-            The same experiments were carried out with the apple/orange dataset, observing the same results, the cycle
-            consistency loss as well as using PatchDiscriminator improved the results.
-            <br><br>
-            X -> Y: from apples to oranges
-            <br><br>
-            <img src="images/cats/sample-001000-X-Y_naive_a.png"
-                class='  d-block float-center mx-auto d-block img-fluid col-sm-10 col-11'>
-            <figcaption>Without cycle consistency,1000 iterations and PatchDiscriminator</figcaption>
-            <img src="images/cats/sample-001000-X-Y_patch_a.png"
-                class='  d-block float-center mx-auto d-block img-fluid col-sm-10 col-11'>
-            <figcaption>With cycle consistency,1000 iterations and PatchDiscriminator</figcaption>
-            <br>
-            Y -> X: from oranges to apples
-            <br><br>
-            <img src="images/cats/sample-001000-Y-X_naive_a.png"
-                class='  d-block float-center mx-auto d-block img-fluid col-sm-10 col-11'>
-            <figcaption>Without cycle consistency,1000 iterations and PatchDiscriminator</figcaption>
-            <img src="images/cats/sample-001000-Y-X_patch_a.png"
-                class='  d-block float-center mx-auto d-block img-fluid col-sm-10 col-11'>
-            <figcaption>With cycle consistency,1000 iterations and PatchDiscriminator</figcaption>
-            <br><br>
-            Results after 10000 iterations using PatchDiscriminator:
-            <br><br>
-
-            <img src="images/cats/sample-010000-X-Y_patch_a.png"
-                class='  d-block float-center mx-auto d-block img-fluid col-sm-10 col-11'>
-            <figcaption>With cycle consistency X -> Y,10000 iterations and PatchDiscriminator</figcaption>
-            <br>
-            <img src="images/cats/sample-010000-Y-X_patch_a.png"
-                class='  d-block float-center mx-auto d-block img-fluid col-sm-10 col-11'>
-            <figcaption>With cycle consistency Y -> X,10000 iterations and PatchDiscriminator</figcaption>
-            <br>
-            Results after 10000 iterations using PatchDiscriminator or DCDiscriminator:
-            <br><br><br>
-
-            <img src="images/cats/sample-010000-X-Y_dc_a.png"
-                class='  d-block float-center mx-auto d-block img-fluid col-sm-10 col-11'>
-            <figcaption>With cycle consistency X -> Y,10000 iterations and DCDiscriminator</figcaption>
-            <br>
-            <img src="images/cats/sample-010000-X-Y_dc_a.png"
-                class='  d-block float-center mx-auto d-block img-fluid col-sm-10 col-11'>
-            <figcaption>With cycle consistency Y -> X,10000 iterations and DCDiscriminator</figcaption>
-            <br><br>
-            I think it is very interesting that in the orange dataset, there are a lot of images of the open fruit,
-            however, in the apple dataset they are very little. Furthermore, oranges are orange in the inside, so same
-            color inside as outside, but apples, are white in the inside. The problem has trouble learning this an in
-            the results we can see apples that are red on the inside. Another thing that catched my atttention, was that
-            the big mayority of the apples are red, so when the model sees a green apple, it doesn't convert it into an
-            orange.
-            </p>
-            <br><br>
-            <h2>Bells & Whistles</h2>
-            <br><br>
-            <h4>Spectral normalization</h4>
-            <br>
-            <p>
-                Applies <a href="https://pytorch.org/docs/stable/generated/torch.nn.utils.spectral_norm.html"
-                    target="'_blanck">spectral normalization</a> to a parameter in the given module.
-
-                <br><br>
-                <img src="images/cats/formula3.png"
-                    class='  d-block float-center mx-auto d-block img-fluid col-sm-6 col-10'>
-                <br><br>
-                Spectral normalization stabilizes the training of discriminators in Generative Adversarial Networks
-                (GANs) by rescaling the weight tensor with spectral norm σ(sigma) of the weight matrix calculated using
-                power iteration method.
-            <div class="container col-12 align-self-center p-0 m-0">
-                <div class="row  align-self-center p-0 m-0 ">
-                    <div class="col-5 p-0 m-0">
-
-                        <img src="images/cats/sample-006400_spectral.png"
-                            class=' d-block float-top mx-auto d-block img-fluid col-11'>
-                        <figcaption>Results after 6400 training iterations</figcaption>
-                    </div>
-                    <div class="col-7 p-0 m-0">
-
-                        <img src="images/cats/plot-006500_spectral.png"
-                            class=' d-block float-top mx-auto d-block img-fluid col-11'>
-                        <figcaption>Losses using basic data augmentation and spectral normalization</figcaption>
-                    </div>
-                </div>
-            </div>
-            </p>
-            <br><br>
-            <h4>When Kim Kardashian meets GANs</h4>
-            <br>
-            <img src="images/cats/gif/kim_deluxe.gif"
-                class='  d-block float-center mx-auto d-block img-fluid col-sm-7  col-10'>
-            <br>
-            If I was going to create a dataset to train a GAN it couldn't be any other than the queen of the selfies. To
-            train this GAN I collected a dataset of 148 images of her intagram:
-            <br><br>
-            <img src="images/cats/kim_data.png"
-                class='  d-block float-center mx-auto d-block img-fluid  col-12'>
-            </p>
-
-
-            <br>
-            <h4>When Kim Kardashian meets CycleGANs</h4>
-            <br> 
-            <p>
-                I didn't manage to do train a good GAN for Kim K because of the small dataset I generated (or maybe because she is so unique and irrepliclable 😜). Also, I
-                realized, that as we commented in class, the images should have been better preprocessed, for example,
-                aligning the face in all the training images.
-                <br><br>
-                Nevertheless, I got a meme:
-                <br><br>
-
-
-                <img src="images/cats/kim_cycle.png"
-                class='  d-block float-center mx-auto d-block img-fluid  col-11'>
-                <br><br>
-                If you don't understand the meme, you can take a look at this spanish famous
-                <a href="https://www.nytimes.com/2012/08/24/world/europe/botched-restoration-of-ecce-homo-fresco-shocks-spain.html"
-                    target="'_blanck">Ecce Homo Fresco restoration</a>.
-
-            </p>
-
-            <br><br><br><br>
-            <p class=footer>©Tomas Cabezon Pedroso, 2021</p>
 
 
 
-        </div> <!-- end content -->
+
+
+
+
+                <br><br><br><br>
+                <p class=footer>©Tomas Cabezon Pedroso, 2021</p>
+
+
+
+            </div> <!-- end content -->
         </div>
 </body>
 
